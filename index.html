@@ -119,6 +119,20 @@
 		            	<li class="d-flex"><span>Email Adresi:</span> <span>androidtelefonum5@gmail.com</span></li>
 		            	
 		            </ul>
+					<br>
+					<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/64b58eac94cf5d49dc642a30/1h5ijal11';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
 		          </div>
 		        </div>
 	          <div class="counter-wrap ftco-animate d-flex mt-md-3">
@@ -342,23 +356,23 @@
 
         <div class="row no-gutters block-9">
           <div class="col-md-6 order-md-last d-flex">
-            <form action="#" class="bg-light p-4 p-md-5 contact-form">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Adınız-Soyadınız">
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Mail Adresiniz">
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Konu">
-              </div>
-              <div class="form-group">
-                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Messajınız"></textarea>
-              </div>
-              <div class="form-group">
-                <input type="submit" value="Gönder" class="btn btn-primary py-3 px-5">
-              </div>
-            </form>
+           <form action="#" class="bg-light p-4 p-md-5 contact-form" id="contact-form">
+				<div class="form-group">
+				<input type="text" class="form-control name" placeholder="Adınız-Soyadınız">
+				</div>
+				<div class="form-group">
+				<input type="text" class="form-control mail" placeholder="Mail Adresiniz">
+				</div>
+				<div class="form-group">
+				<input type="text" class="form-control subject" placeholder="Konu">
+				</div>
+				<div class="form-group">
+				<textarea name="" id="" cols="30" rows="7" class="form-control body" placeholder="Messajınız"></textarea>
+				</div>
+				<div class="form-group">
+				<input type="submit" value="Gönder" class="btn btn-primary py-3 px-5">
+				</div>
+			</form>
           
           </div>
 
@@ -452,6 +466,67 @@
   <script src="js/scrollax.min.js"></script>
   
   <script src="js/main.js"></script>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+  (function() {
+    emailjs.init("OfIvzx4_W9G8lfDCS"); // Replace "user_your_user_id" with your EmailJS user ID
+  })();
+	</script>
+
+  
+<script src="js/main.js"></script>
+
+<!-- Modify your script tag -->
+<script>
+	function sendMsg(e) {
+	  e.preventDefault();
+  
+	  const form = document.querySelector('#contact-form');
+	  const name = document.querySelector('.name').value;
+	  const email = document.querySelector('.mail').value;
+	  const subject = document.querySelector('.subject').value;
+	  const body = document.querySelector('.body').value;
+  
+	  // Using EmailJS to send the email
+	  emailjs.send("service_9g8qgoc","template_855bnex",{
+		from_name: name,
+		to_name: "majed",
+		message: body,
+		mail: email,
+		subject: subject,
+	  }).then(
+		function(response) {
+		  console.log("Email sent successfully:", response);
+		  alert("Email sent successfully!");
+		},
+		function(error) {
+		  console.log("Failed to send email:", error);
+		  alert("Failed to send email. Please try again later.");
+		}
+	  );
+	}
+  
+	const form = document.querySelector('#contact-form');
+	form.addEventListener('submit', sendMsg);
+  </script>
+
+  <br>
+  <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/64b58eac94cf5d49dc642a30/1h5ijal11';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
     
   </body>
 </html>
+
+
